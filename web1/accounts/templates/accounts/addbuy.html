@@ -1,0 +1,18 @@
+{% extends 'accounts/base.html' %}
+{% load bootstrap3 %}
+{% block body %}
+<br><br><hr>
+{% if user.is_superuser %}
+<form  method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <h6>Note:Here size is meter-square</h6>
+  <input type="submit" class="btn btn-success" value="Add Property">
+</form>
+{% else  %}
+<h3>
+  <em>Please log in to access this feature</em>
+  <a class="btn btn-primary" href="{% url 'accounts:login' %}">Login here</a>
+</h3>
+{% endif %}
+{% endblock %}

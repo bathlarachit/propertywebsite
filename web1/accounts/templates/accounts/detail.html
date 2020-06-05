@@ -1,0 +1,32 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block body %}
+
+<br><br><br>
+<h1 id="head">
+  <em>
+    Welcome !
+  </em>
+  <hr>
+</h1>
+<h2>
+  <em>Name: {{land_detail.name}}</em>
+</h2>
+<hr>
+<img  id="detailImg"src="{{land_detail.image.url}}" alt="">
+<hr>
+<h3>
+  <em>  Location:{{land_detail.location}}</em>
+
+</h3>
+<hr>
+<h3>
+  <em>Disciption:{{land_detail.discription}}</em>
+</h3>
+<hr>
+<h3>
+  <em>Size:{{land_detail.size}}</em>
+</h3>
+<hr>
+<a class="btn btn-danger"href="{% url 'accounts:buydelete' pk=land_detail.pk %}">Delete</a>
+{% endblock %}

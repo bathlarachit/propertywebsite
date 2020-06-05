@@ -1,0 +1,24 @@
+{% extends 'accounts/base.html' %}
+{% block body %}
+<br><br>
+<h1>
+  <em>Request of Selling</em>
+  <br><hr>
+</h1>
+<ol>
+{% for req in requests %}
+<li>
+  <div class="card" style="width: 18rem;">
+    <img src="{{req.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Property</h5>
+      <p class="card-text">{{req.Property_name}}</p>
+      <a href="{{req.id}}" class="btn btn-primary">Visit</a>
+    </div>
+  </div>
+</li>
+<hr>
+
+{% endfor %}
+</ol>
+{% endblock %}

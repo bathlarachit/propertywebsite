@@ -1,0 +1,30 @@
+{% extends 'accounts/base.html' %}
+{% block body %}
+<br><br>
+<h1>
+  <em>List</em>
+</h1>
+<ol>
+{% for land in land_list %}
+<li>
+  <div class="card" style="width: 18rem;">
+    {% if land.image %}
+    <img src="{{land.image.url}}" class="card-img-top" alt="...">
+    {% else %}
+  <img src="....." class="card-img-top" alt="Image not available">
+    {%endif  %}
+    <div class="card-body">
+      <h5 class="card-title">Property</h5>
+      <p class="card-text">{{land.name}}</p>
+      <a href="{{land.id}}" class="btn btn-primary">Visit</a>
+    </div>
+  </div>
+</li>
+<hr>
+
+{% endfor %}
+</ol>
+{% if user.is_superuser %}
+<a class="btn btn-success"href="{% url 'accounts:addbuy' %}">Add More</a>
+{% endif %}
+{% endblock %}

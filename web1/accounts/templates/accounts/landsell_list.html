@@ -1,0 +1,24 @@
+{% extends 'accounts/base.html' %}
+{% block body  %}
+<br><br><hr>
+{% if user.is_authenticated %}
+<ol>
+{% for p in user_sell_list %}
+<li>
+  <div class="card" style="width: 18rem;">
+    <img src="{{ p.image.url }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Property</h5>
+      <p class="card-text">{{p.Property_name}}</p>
+      <a href="{{p.id}}" class="btn btn-primary">Visit</a>
+    </div>
+  </div>
+
+
+</li>
+{% endfor %}
+
+</ol>
+{% endif %}
+<a class="btn btn-info"href="{% url 'accounts:sellpost' %}">Post property</a>
+{% endblock %}

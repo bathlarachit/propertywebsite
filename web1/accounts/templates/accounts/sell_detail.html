@@ -1,0 +1,34 @@
+{% extends 'accounts/base.html' %}
+{% block body %}
+<br><br><br>
+<h1 id="head">
+  <em>
+    Welcome !
+  </em>
+  <hr>
+</h1>
+<h2>
+  <em>Property Name: {{sell_detail.Property_name}}</em>
+</h2>
+<hr>
+<img  id="detailImg"src="{{sell_detail.image.url}}" alt="">
+<hr>
+<h3>
+  <em>  Location:{{sell_detail.location}}</em>
+
+</h3>
+<hr>
+<h3>
+  <em>Disciption:{{sell_detail.discription}}</em>
+</h3>
+<hr>
+<h3>
+  <em>Size:{{sell_detail.size}}</em>
+</h3>
+<hr>
+<h3>
+  <em>Buyer:{{sell_detail.post_by.first_name}} {{sell_detail.post_by.last_name}}</em>
+</h3>
+<hr>
+<a class="btn btn-danger"href="{% url 'accounts:delete' pk=sell_detail.pk%}">Delete</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'accounts/base.html' %}
+{% block body %}
+<br><br>
+<hr>
+<h1>Do you to Delete {{landbuy.name}} ?</h1>
+<form  method="post">
+  {% csrf_token %}
+  <hr>
+  <input type="submit" class="btn btn-danger"value="Delete" style="border:white 40px solid;">
+  <a  class="btn btn-info"href="{% url 'accounts:detail' pk=landbuy.pk%}">Cancel</a>
+</form>
+{%endblock%}

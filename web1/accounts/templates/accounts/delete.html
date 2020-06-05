@@ -1,0 +1,10 @@
+{% extends 'accounts/base.html' %}
+{% block body %}
+<br><br><h1>Do you to Delete {{landsellmodel.Property_name}} ?</h1>
+<form  method="post">
+  {% csrf_token %}
+  <hr>
+  <input type="submit" class="btn btn-danger"value="Delete">
+  <a  class="btn btn-info"href="{% url 'accounts:requestsdetail' pk=landsellmodel.pk%}">Cancel</a>
+</form>
+{%endblock%}
